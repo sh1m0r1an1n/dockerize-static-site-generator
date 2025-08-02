@@ -1,0 +1,19 @@
+FROM python:3.11-slim
+
+ARG VERSION=main
+ARG REPO=https://github.com/MrDave/StaticJinjaPlus.git
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN git clone ${REPO} /StaticJinjaPlus
+
+WORKDIR /StaticJinjaPlus
+
+RUN if [ "$VERSION" != "main" ]; then git checkout $VERSION; fi
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python", "main.py", "--srcpath", "./templates"] 
