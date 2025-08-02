@@ -33,8 +33,8 @@ docker build -f $DOCKER_PATH/Dockerfile.slim -t $DOCKER_USERNAME/staticjinjaplus
 <summary><strong>Для Windows PowerShell:</strong></summary>
 
 ```powershell
-$env:DOCKER_USERNAME="shimorianin"
-$env:DOCKER_PATH="C:\python_scripts\modules\GitHub\StaticJinjaPlus"
+$env:DOCKER_USERNAME="имя_docker_пользователя"
+$env:DOCKER_PATH="путь_до_dockerfile"
 
 # Ubuntu-версии
 docker build -f $env:DOCKER_PATH\Dockerfile.ubuntu --build-arg VERSION=0.1.0 -t $env:DOCKER_USERNAME/staticjinjaplus:0.1.0 $env:DOCKER_PATH
@@ -55,8 +55,8 @@ docker build -f $env:DOCKER_PATH\Dockerfile.slim -t $env:DOCKER_USERNAME/staticj
 <summary><strong>Для Windows Command Prompt:</strong></summary>
 
 ```cmd
-set DOCKER_USERNAME=shimorianin
-set DOCKER_PATH=C:\python_scripts\modules\GitHub\StaticJinjaPlus
+set DOCKER_USERNAME=имя_docker_пользователя
+set DOCKER_PATH=путь_до_dockerfile
 
 # Ubuntu-версии
 docker build -f %DOCKER_PATH%\Dockerfile.ubuntu --build-arg VERSION=0.1.0 -t %DOCKER_USERNAME%/staticjinjaplus:0.1.0 %DOCKER_PATH%
@@ -149,11 +149,11 @@ docker run --rm -v $(pwd)/templates:/StaticJinjaPlus/templates $DOCKER_USERNAME/
 
 | Тег | Описание | Базовый образ | Содержимое | Размер |
 |-----|----------|---------------|------------|--------|
-| `latest` | Отдельная сборка | Ubuntu | develop | ~300 МБ |
-| `slim` | Отдельная сборка | Python-slim | develop | ~150 МБ |
-| `develop` | Последний коммит | Ubuntu | develop | ~300 МБ |
-| `develop-slim` | Последний коммит | Python-slim | develop | ~150 МБ |
-| `0.1.0` | Версия 0.1.0 | Ubuntu | 0.1.0 | ~300 МБ |
-| `0.1.0-slim` | Версия 0.1.0 | Python-slim | 0.1.0 | ~150 МБ |
-| `0.1.1` | Версия 0.1.1 | Ubuntu | 0.1.1 | ~300 МБ |
-| `0.1.1-slim` | Версия 0.1.1 | Python-slim | 0.1.1 | ~150 МБ | 
+| `latest` | Отдельная сборка | Ubuntu | develop | ~110.15 МБ |
+| `slim` | Отдельная сборка | Python-slim | develop | ~78.4 МБ |
+| `develop` | Последний коммит | Ubuntu | develop | ~110.15 МБ |
+| `develop-slim` | Последний коммит | Python-slim | develop | ~78.4 МБ |
+| `0.1.0` | Версия 0.1.0 | Ubuntu | 0.1.0 | ~111.15 МБ |
+| `0.1.0-slim` | Версия 0.1.0 | Python-slim | 0.1.0 | ~79.56 МБ |
+| `0.1.1` | Версия 0.1.1 | Ubuntu | 0.1.1 | ~110.16 МБ |
+| `0.1.1-slim` | Версия 0.1.1 | Python-slim | 0.1.1 | ~78.41 МБ |
